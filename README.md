@@ -1,11 +1,11 @@
-📡 RSS to Slack Automation with n8n
-
+**📡 RSS to Slack Automation with n8n
+**
 Automatically post new RSS feed articles to your Slack channel using n8n workflow automation
 
-🎯 Overview
-This project demonstrates how to build a fully automated RSS-to-Slack workflow using n8n. New articles from your favorite RSS feeds are automatically formatted and posted to a designated Slack channel every 15 minutes.
-✨ Features
-
+**🎯 Overview
+**This project demonstrates how to build a fully automated RSS-to-Slack workflow using n8n. New articles from your favorite RSS feeds are automatically formatted and posted to a designated Slack channel every 15 minutes.
+**✨ Features
+**
 ⏰ Automatic polling - Checks RSS feeds every 15 minutes
 🔄 Duplicate prevention - Only posts new articles
 🎨 Beautiful formatting - Clean, professional Slack messages with Block Kit
@@ -13,14 +13,15 @@ This project demonstrates how to build a fully automated RSS-to-Slack workflow u
 📱 Real-time updates - Get notified as soon as new content is published
 
 
-🏗️ Architecture
+**🏗️ Architecture
+**
 ┌─────────────┐    ┌──────────┐    ┌────────────┐    ┌──────┐    ┌──────────┐
 │  Schedule   │───▶│   RSS    │───▶│   Remove   │───▶│ Code │───▶│   HTTP   │
 │   Trigger   │    │   Read   │    │ Duplicates │    │ Node │    │ Request  │
 │ (15 min)    │    │          │    │            │    │      │    │ (Slack)  │
 └─────────────┘    └──────────┘    └────────────┘    └──────┘    └──────────┘
-Workflow Components
-
+**Workflow Components
+**
 Schedule Trigger - Runs workflow every 15 minutes
 RSS Feed Read - Fetches articles from RSS feed
 Remove Duplicates - Filters out already-seen articles
@@ -28,9 +29,10 @@ Code (JavaScript) - Formats data for Slack Block Kit
 HTTP Request - Sends formatted message to Slack webhook
 
 
-🚀 Quick Start
-Prerequisites
-
+**🚀 Quick Start
+**
+**Prerequisites
+**
 n8n instance (cloud or self-hosted)
 Slack workspace with admin access
 RSS feed URL
@@ -99,20 +101,20 @@ Click Save
 
 🎉 Done! Your bot is now live and will post new articles every 15 minutes.
 
-📚 RSS Feed Examples
-Here are some popular RSS feeds you can use:
+**📚 RSS Feed Examples
+**Here are some popular RSS feeds you can use:
 SourceURLTechCrunchhttps://techcrunch.com/feed/Hacker Newshttps://hnrss.org/frontpageDev.tohttps://dev.to/feedWiredhttps://www.wired.com/feed/rssThe Vergehttps://www.theverge.com/rss/index.xmlArs Technicahttps://feeds.arstechnica.com/arstechnica/indexMIT Technology Reviewhttps://www.technologyreview.com/feed/
 
-🎨 Customization
-Change Update Frequency
+**🎨 Customization
+**Change Update Frequency
 In the Schedule Trigger node, modify the interval:
 
 Every 5 minutes (for fast-moving feeds)
 Every 30 minutes (for slower feeds)
 Every 1 hour (for daily digests)
 
-Customize Slack Message Format
-Edit the Code node to change how messages appear:
+**Customize Slack Message Format
+**Edit the Code node to change how messages appear:
 javascript// Add author name
 {
   type: "context",
