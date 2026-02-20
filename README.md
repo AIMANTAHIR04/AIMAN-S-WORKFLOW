@@ -4,9 +4,6 @@
   
 Automatically post new RSS feed articles to your Slack channel using n8n workflow automation
 
-[![n8n](https://img.shields.io/badge/n8n-automation-blue)](https://n8n.io/)
-[![Slack](https://img.shields.io/badge/Slack-API-green)](https://api.slack.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
@@ -311,29 +308,3 @@ If this project helped you, please give it a **⭐️ on GitHub**!
 </div>
 
 ---
-
-## 🚀 Push this README to GitHub
-
-```powershell
-# Navigate to your project
-cd C:\Users\aimee\Downloads\AutomatedRSS-to-Community_Distribution
-
-# Create the README file
-notepad README.md
-# Copy and paste the content above, then save
-
-# Add and commit
-git add README.md
-git commit -m "Add comprehensive README documentation"
-
-# Push to GitHub
-git push origin main
-```
-
-**Note:** If you still have the Slack webhook URL in your `new.json` file, you'll need to remove it first or use force push:
-
-```powershell
-git add README.md
-git commit -m "Add README"
-git push origin main --force
-```
