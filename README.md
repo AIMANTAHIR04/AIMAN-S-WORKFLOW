@@ -9,15 +9,6 @@ Automatically post new RSS feed articles to your Slack channel using n8n workflo
 
 ---
 
-## 📸 Preview
-
-<div align="center">
-  <img src="https://via.placeholder.com/300x200?text=Workflow+Preview" alt="Workflow Preview" width="250"/>
-  <img src="https://via.placeholder.com/300x200?text=Slack+Message" alt="Slack Message Preview" width="250"/>
-  <img src="https://via.placeholder.com/300x200?text=Schedule+Settings" alt="Schedule Settings" width="250"/>
-</div>
-
----
 
 ## 🎯 Overview
 
