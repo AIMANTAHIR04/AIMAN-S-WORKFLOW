@@ -94,16 +94,18 @@ Value to Dedupe On: link
 
 #### 📌 Node 4: Code (JavaScript)
 ```javascript
-const item = $input.first().json;
+// Process ALL items, not just the first one
+const items = $input.all();
 
-return [{
+// Map each RSS item to Slack format
+return items.map(item => ({
   json: {
     blocks: [
       {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `*<${item.link}|${item.title}>*\n${(item.contentSnippet || "").slice(0, 200)}...`
+          text: `*<${item.json.link}|${item.json.title}>*\n${(item.json.contentSnippet || "").slice(0, 200)}...`
         }
       },
       {
@@ -111,13 +113,13 @@ return [{
         elements: [
           {
             type: "mrkdwn",
-            text: `📅 ${item.pubDate}`
+            text: `📅 ${item.json.pubDate}`
           }
         ]
       }
     ]
   }
-}];
+}));
 ```
 
 #### 📌 Node 5: HTTP Request
