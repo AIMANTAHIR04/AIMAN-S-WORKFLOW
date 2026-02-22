@@ -1,5 +1,5 @@
 {
-  "name": "new",
+  "name": "RSS to Slack Automation with n8n",
   "nodes": [
     {
       "parameters": {
