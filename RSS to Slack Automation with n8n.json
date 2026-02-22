@@ -38,7 +38,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://hooks.slack.com/services/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",
+        "url": "={{ $env.SLACK_WEBHOOK_URL || "YOUR_WEBHOOK_HERE" }}",
         "sendBody": true,
         "contentType": "raw",
         "body": "={{ JSON.stringify($json) }}",
@@ -51,7 +51,9 @@
         0
       ],
       "id": "6fc79d5e-f119-451a-912d-31c523e9ac18",
-      "name": "HTTP Request"
+      "name": "HTTP Request",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -70,7 +72,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const item = $input.first().json;\n\nreturn [{\n  json: {\n    blocks: [\n      {\n        type: \"section\",\n        text: {\n          type: \"mrkdwn\",\n          text: `*<${item.link}|${item.title}>*\\n${(item.contentSnippet || \"\").slice(0, 200)}...`\n        }\n      },\n      {\n        type: \"context\",\n        elements: [\n          {\n            type: \"mrkdwn\",\n            text: `📅 ${item.pubDate}`\n          }\n        ]\n      }\n    ]\n  }\n}];"
+        "jsCode": "// Process ALL items, not just the first one\nconst items = $input.all();\n\n// Map each RSS item to Slack format\nreturn items.map(item => ({\n  json: {\n    blocks: [\n      {\n        type: \"section\",\n        text: {\n          type: \"mrkdwn\",\n          text: `*<${item.json.link}|${item.json.title}>*\\n${(item.json.contentSnippet || \"\").slice(0, 200)}...`\n        }\n      },\n      {\n        type: \"context\",\n        elements: [\n          {\n            type: \"mrkdwn\",\n            text: `📅 ${item.json.pubDate}`\n          }\n        ]\n      }\n    ]\n  }\n}));"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -135,7 +137,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "67bf9a31-738b-4d68-aab2-4cc5378e37b8",
+  "versionId": "86620cc4-e987-4359-96c8-594743a87664",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "54b10683fda4483b49b3dcf2a8c7a7a1479f94f42d8e8b62e5eb8d946551b3af"
