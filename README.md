@@ -4,7 +4,7 @@
   
 Automatically post new RSS feed articles to your Slack channel using n8n workflow automation
 
-![Uploading image.png…]()
+<img width="1598" height="395" alt="image" src="https://github.com/user-attachments/assets/76d985a0-1187-4f91-94dd-c04095893eec" />
 
 </div>
 
